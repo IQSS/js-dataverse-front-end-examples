@@ -31,6 +31,56 @@ export default {
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
 -->
 
+## Getting Started
+
+First install node >=16 and npm >=8. Recommended versions `node v19` and `npm v9`.
+
+### Create a `.npmrc` file and add a token
+
+To install the [@iqss/dataverse-client-javascript](https://github.com/IQSS/dataverse-client-javascript/pkgs/npm/dataverse-client-javascript)
+from the GitHub registry, necessary for connecting with the Dataverse API, follow these steps to create an `.npmrc` file in
+the root of your project using your GitHub token.
+
+1. **Copy `.npmrc.example`**
+
+   Duplicate the `.npmrc.example` file in your project and save it as `.npmrc`.
+
+2. **Replace the Token**
+
+   Open the newly created `.npmrc` file and replace `YOUR_GITHUB_TOKEN` with your actual GitHub token.
+
+   ```plaintext
+   legacy-peer-deps=true
+
+    //npm.pkg.github.com/:_authToken=<YOUR_GITHUB_AUTH_TOKEN>
+    @iqss:registry=https://npm.pkg.github.com/
+   ```
+
+#### How to Get a GitHub Token
+
+If you don't have a GitHub token yet, follow these steps:
+
+1. Go to your GitHub account settings.
+
+2. Navigate to "Developer settings" -> "Personal access tokens."
+
+3. Click "Personal access tokens" -> "Tokens (classic)" -> "Generate new token (classic)".
+
+4. Give the token a name and select the "read:packages" scope.
+
+5. Copy the generated token.
+
+6. Replace `YOUR_GITHUB_AUTH_TOKEN` in the `.npmrc` file with the copied token.
+
+Now, you should be able to install the Dataverse JavaScript client using npm.
+
+### `npm install`
+
+Run this command to install the dependencies. You may see a message about vulnerabilities after running this command. \
+Please check this announcement from Create React App repository https://github.com/facebook/create-react-app/issues/11174 .
+These vulnerabilities won't be in the production build since they come from libraries only used during the development.
+
+
 ## Local development environment
 
 A containerized environment, oriented to local development, is available to be run from the repository.
