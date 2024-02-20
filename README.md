@@ -1,2 +1,2 @@
 # js-dataverse-front-end-examples
-Example Front End Apps for Dataverse, using js-dataverse library
+Example Front End Applications for Dataverse, demonstrating the js-dataverse library
