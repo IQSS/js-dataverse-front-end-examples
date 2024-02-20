@@ -1,0 +1,19 @@
+FROM node:19.6.1-alpine as BUILD_IMAGE
+
+RUN apk --no-cache add python3 make g++
+
+
+
+WORKDIR /usr/src/app
+COPY package.json ./
+COPY package-lock.json ./
+COPY .npmrc ./
+RUN npm install
+
+FROM node:19.6.1-alpine 
+
+WORKDIR /usr/src/app
+COPY --from=BUILD_IMAGE /usr/src/app/node_modules ./node_modules
+
+EXPOSE 5173
+CMD ["npm", "start"]

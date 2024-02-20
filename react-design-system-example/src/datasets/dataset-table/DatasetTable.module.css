@@ -1,0 +1,19 @@
+.separation-line {
+    margin: 1em 0;
+    border-bottom: 1px solid #dee2e6;
+}
+.header {
+    margin: 0.5em 0;
+}
+
+.container {
+    margin: 0.5rem 0;
+}
+
+.summary-container {
+    margin-bottom: 1em;
+}
+
+.tab-container {
+    padding: 1em 0;
+}
