@@ -36,18 +36,18 @@ export function DatasetTable()  {
                             <Table>
                                 <thead>
                                 <tr>
-                                    <th>Citation</th>
-                                    <th>Create Time</th>
                                     <th>Title</th>
+                                    <th>Create Time</th>
+                                    <th>Citation</th>
                                     <th>Version State</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 {datasetPreviewList.map(datasetPreview => (
                                     <tr key={datasetPreview.versionId}>
-                                        <td>{datasetPreview.citation}</td>
-                                        <td>{datasetPreview.versionInfo.createTime.toUTCString()}</td>
                                         <td>{datasetPreview.title}</td>
+                                        <td>{datasetPreview.versionInfo.createTime.toUTCString()}</td>
+                                        <td>{datasetPreview.citation}</td>
                                         <td>{datasetPreview.versionInfo.state}</td>
                                     </tr>
                                 ))}
