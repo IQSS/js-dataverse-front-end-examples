@@ -1,5 +1,5 @@
-import { Outlet } from "react-router-dom";
-import styles from "./index.module.css";
+import { Outlet } from 'react-router-dom'
+import styles from './index.module.css'
 
 export const Layout = () => {
   return (
@@ -14,5 +14,5 @@ export const Layout = () => {
         <p>Design System Example &copy; {new Date().getFullYear()}</p>
       </footer>
     </>
-  );
-};
+  )
+}
