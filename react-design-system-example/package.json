@@ -14,7 +14,8 @@
     "@iqss/dataverse-client-javascript": "npm:@IQSS/dataverse-client-javascript@^2.0.0-pr124.ca99e38",
     "@iqss/dataverse-design-system": "^1.0.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
