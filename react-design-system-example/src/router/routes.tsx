@@ -6,7 +6,7 @@ import { NotFoundPage } from "../pages/NotFoundPage";
 
 const routes: RouteObject[] = [
   {
-    path: "/",
+    path: "/spa",
     element: <Layout />,
     children: [
       {
@@ -14,8 +14,8 @@ const routes: RouteObject[] = [
         element: <Home />,
       },
       {
-        path: "dataset/:persistentId",
-        element: <Dataset />,
+        path: "dataset",
+        element: <Dataset/>,
       },
       {
         path: "*",
