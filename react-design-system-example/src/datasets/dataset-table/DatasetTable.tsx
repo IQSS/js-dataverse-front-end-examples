@@ -1,30 +1,30 @@
-import { useState } from "react";
-import { DatasetPreview, getAllDatasetPreviews } from "@iqss/dataverse-client-javascript";
+import { useState } from 'react'
+import { DatasetPreview, getAllDatasetPreviews } from '@iqss/dataverse-client-javascript'
 // @ts-expect-error - Missing types.
-import { Button } from "@iqss/dataverse-design-system";
+import { Button } from '@iqss/dataverse-design-system'
 // @ts-expect-error - Missing types.
-import { Table } from "@iqss/dataverse-design-system";
-import styles from "./DatasetTable.module.css";
+import { Table } from '@iqss/dataverse-design-system'
+import styles from './DatasetTable.module.css'
+import { Link } from 'react-router-dom'
 
 export function DatasetTable() {
-  const [datasetPreviewList, setDatasetPreviewList] = useState<DatasetPreview[]>([]);
-  const [datasetCount, setDatasetCount] = useState(0); // State to store the dataset count
-  // Function to handle the API Key input changes
+  const [datasetPreviewList, setDatasetPreviewList] = useState<DatasetPreview[]>([])
+  const [datasetCount, setDatasetCount] = useState(0) // State to store the dataset count
 
   // Action to populate the table
   const populateTable = () => {
     getAllDatasetPreviews.execute().then((datasetPreviewSubset) => {
-      setDatasetPreviewList(datasetPreviewSubset.datasetPreviews);
-      setDatasetCount(datasetPreviewSubset.totalDatasetCount);
-    });
-  };
+      setDatasetPreviewList(datasetPreviewSubset.datasetPreviews)
+      setDatasetCount(datasetPreviewSubset.totalDatasetCount)
+    })
+  }
 
   return (
     <article>
       <header className={styles.header}>
         <h1>Dataset Table</h1>
       </header>
-      <div className={styles["separation-line"]}></div>
+      <div className={styles['separation-line']}></div>
       <div className={styles.container}>
         <div>
           <>
@@ -42,7 +42,11 @@ export function DatasetTable() {
               <tbody>
                 {datasetPreviewList.map((datasetPreview) => (
                   <tr key={datasetPreview.versionId}>
-                    <td>{datasetPreview.title}</td>
+                    <td>
+                      <Link to={`/spa/dataset?persistentId=${datasetPreview.persistentId}`}>
+                        {datasetPreview.title}
+                      </Link>
+                    </td>
                     <td>{datasetPreview.versionInfo.createTime.toUTCString()}</td>
                     <td>{datasetPreview.citation}</td>
                     <td>{datasetPreview.versionInfo.state}</td>
@@ -54,5 +58,5 @@ export function DatasetTable() {
         </div>
       </div>
     </article>
-  );
+  )
 }
