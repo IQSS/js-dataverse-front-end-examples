@@ -15,8 +15,8 @@ This repository is a curated collection of front-end applications demonstrating 
 To get started, clone this repository and navigate to the example you're interested in. Each example contains its own README with specific instructions on how to run and explore the application.
 
 ```bash
-git clone https://github.com/your-username/your-repository-name.git
-cd your-repository-name/example-directory
+git clone https://github.com/js-dataverse-front-end-examples/react-design-system-example.git
+cd js-dataverse-front-end-examples/react-design-system-example
 # Follow the example-specific instructions
 ```
 
