@@ -127,3 +127,14 @@ To clean up your environment of any running environment containers, as well as a
 ```
 ./rm-env
 ```
+
+## Run the example application
+
+To run the application, you first must obtain a Dataverse API token. To do so, follow these steps:
+1. Setup the local Dataverse instance as described in the previous section.
+2. Go to your Dataverse at  instance at [http://localhost:8000](http://localhost:8000)  and log in. (Username: `dataverseAdmin`, Password: `admin1`)
+2. From the top right corner, click on your username and select "API Token" from the dropdown menu.
+3. Click on "Create API Token" and copy the token.
+4. Edit the .env file in the root of the project, replacing `DATAVERSE_API_TOKEN` with the copied token.
+5. Go to  [http://localhost:8000/spa](http://localhost:8000/spa) to access the SPA frontend.
+6. The 'Populate' button should populate dataset table with the data from the local Dataverse instance.
